@@ -1,0 +1,25 @@
+<!--<div >
+	<div >
+	{{ _("Select Mode of Payment:-") }}
+	<select class="select-ship-rule">
+		<option value="0">Select</option>
+		{% for d in mop %}
+        	<option value="">{{d.get("mode_of_payment")}}</option>
+					{% endfor %}
+			  </select>
+				</div>
+</div>-->
+
+
+<div class="payment-rule">
+      <div>
+    <label class="control-label" style="float: left; margin-right: 10px; font-weight: normal" >Select Mode of Payment :</label>
+            <select id="select-payment-rule" type="text" autocomplete="off" class="input-with-feedback form-control bold" maxlength="140" data-fieldtype="Select" data-fieldname="shipping_rule" placeholder="" style="width: 170px" >
+                <option value="0">Select</option>
+                {% for d in mop %}
+                    	<option value="{{ d.get("mode_of_payment") }}">{{d.get("mode_of_payment")}}</option>
+            					{% endfor %}
+
+            </select>
+         </div>
+      </div>

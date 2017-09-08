@@ -1,0 +1,25 @@
+  <!--<div class="ship-rule">
+    <div>
+	{{ _("Select Shipping Rule:-") }}
+	<select class="select-ship-rule">
+    	<option value="0">Select</option>
+		{% for d in sop %}
+        	<option value="{{ d.get("label") }}">{{d.get("label")}}</option>
+					{% endfor %}
+			  </select>
+				</div>
+</div>-->
+
+<div class="ship-rule">
+      <div>
+        <div>
+    <label class="control-label" style="float: left; margin-right: 10px; font-weight: normal;" >Select Shipping Rule :</label>
+  </div>
+            <select id="select-ship-rule" type="text" autocomplete="off" class="input-with-feedback form-control bold" maxlength="140" data-fieldtype="Select" data-fieldname="shipping_rule" placeholder="" style="width: 200px" >
+                <option value="0">Select</option>
+                {% for d in sop %}
+                    	<option value="{{ d.get("label") }}">{{d.get("label")}}</option>
+            					{% endfor %}
+            </select>
+         </div>
+      </div>
