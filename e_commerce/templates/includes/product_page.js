@@ -3,7 +3,7 @@
 
 frappe.ready(function() {
 	window.item_code = $('[itemscope] [itemprop="productID"]').text().trim();
-	var qty = 0;
+	var qty = 1;
 
 	frappe.call({
 		type: "POST",
@@ -51,7 +51,7 @@ frappe.ready(function() {
 			callback: function(r) {
 				if(!r.exc) {
 					toggle_update_cart(1);
-					qty = 1;
+					qty = qty;
 				}
 			},
 			btn: this,
@@ -74,9 +74,10 @@ frappe.ready(function() {
 			}
 		}
 		input.val(newVal);
-		var item_code = get_item_code()
-		toggle_update_cart(newVal);
-		erpnext.shopping_cart.shopping_cart_update(item_code, newVal, true);
+		qty = newVal;
+		//var item_code = get_item_code()
+		//toggle_update_cart(newVal);
+		//erpnext.shopping_cart.shopping_cart_update(item_code, newVal, true);
 	});
 
 	$("[itemscope] .item-view-attribute .form-control").on("change", function() {
