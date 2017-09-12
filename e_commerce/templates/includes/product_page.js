@@ -47,11 +47,11 @@ frappe.ready(function() {
 
 		erpnext.shopping_cart.update_cart({
 			item_code: get_item_code(),
-			qty: 1,
+			qty: qty,
 			callback: function(r) {
 				if(!r.exc) {
 					toggle_update_cart(1);
-					qty = qty;
+					qty = 1;
 				}
 			},
 			btn: this,
