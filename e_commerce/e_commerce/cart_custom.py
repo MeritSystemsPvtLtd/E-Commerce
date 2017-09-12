@@ -18,7 +18,10 @@ class WebsitePriceListMissingError(frappe.ValidationError): pass
 def change_in_shipping(shipp):
 	with_items=True
 	quotation = _get_cart_quotation()
-	quotation.shipping_rule = shipp
+	if shipp == '0':
+		quotation.shipping_rule = None
+	else:
+		quotation.shipping_rule = shipp
 	empty_card = False
 	"""qty = flt(qty)
 	if qty == 0:
